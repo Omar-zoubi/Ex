@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <header></header>
+    <main>
+        <div>
+            <%arr.forEach(data=> {%>
+                <h1><%=data.name%></h1>
+                <p><%=data.house%></p>
+                <p><%=data.patronus%></p>
+                <p><%=data.isalive%></p>
+
+                <form action="/update/<%=data.id%>?_method=DELETE" method="POST">
+                    <button type="submit" >delete</button>
+
+                </form>
+
+              
+                <form action="/update/<%=data.id%>?_method=PUT" method="POST">
+                    <input type="text" value="<%=data.name%>" name="name">
+                    <input type="text" value="<%=data.house%>" name="house">
+                    <input type="text" value="<%=data.patronus%>" name="patronus">
+                    <input type="text" value="<%=data.isalive%>" name="is_alive">
+                    <button type="submit" >Update</button>
+
+
+                </form>
+                <%}) %>
+        </div>
+
+
+
+
+
+    </main>
+    <footer></footer>
+
+</body>
+
+</html>

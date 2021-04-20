@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section id="newdiv">
+        
+            <%apidata.forEach(data=> {%>
+                <div >
+                <h1><%=data.name%></h1>
+                <p><%=data.house%></p>
+                <p><%=data.patronus%></p>
+                <p><%=data.is_alive%></p>
+
+              
+                <form action="/savedata" method="POST">
+                    <input type="hidden" value="<%=data.name%>" name="name">
+                    <input type="hidden" value="<%=data.house%>" name="house">
+                    <input type="hidden" value="<%=data.patronus%>" name="patronus">
+                    <input type="hidden" value="<%=data.is_alive%>" name="is_alive">
+                    <button type="submit" >Add to Fav</button>
+
+
+                </form>
+            </div>
+                <%}) %>
+        
+
+    </section>
+
+
+
+    </main>
+    <footer></footer>
+
+</body>
+
+</html>
